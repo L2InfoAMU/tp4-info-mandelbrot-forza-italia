@@ -210,8 +210,6 @@ public class Complex {
         if (o == null || getClass() != o.getClass())
             return false;
         Complex complex = (Complex) o;
-        //return Helpers.doubleCompare(complex.real, real) == 0 ||
-        //      Helpers.doubleCompare(complex.imaginary, imaginary) == 0;
         if (this.real==complex.real && this.imaginary==complex.imaginary) return true;
         return false;
     }
