@@ -83,7 +83,7 @@ public class ComplexTest {
     }
 
     @Test
-    void testSubstract(){
+    void testSubtract(){
         assertEquals(minusOne, Complex.ZERO.subtract(Complex.ONE));
         assertEquals(oneMinusI, Complex.ONE.subtract(Complex.I));
         assertEquals(new Complex(real-1,imaginary-1),
@@ -142,7 +142,6 @@ public class ComplexTest {
 
     @Test
     void testMultiply(){
-
         assertEquals(new Complex(2,2),onePlusI.multiply(two));
         assertEquals(new Complex(-2,2),onePlusI.multiply(twoI));
         assertEquals(new Complex(-1,5), onePlusI.multiply(new Complex(2,3)));
@@ -151,10 +150,17 @@ public class ComplexTest {
 
     @Test
     void testPow(){
-
         assertEquals(Complex.ONE,onePlusI.pow(0));
         assertEquals(onePlusI,onePlusI.pow(1));
         assertEquals(new Complex(0,2),onePlusI.pow(2));
         assertEquals(new Complex(-46,9),new Complex(2,3).pow(3));
+    }
+
+    @Test
+    void testScale(){
+        assertEquals(onePlusI,onePlusI.scale(1));
+        assertEquals(new Complex(3,3),onePlusI.scale(3));
+        assertEquals(new Complex(0,2),new Complex(0,1).scale(2));
+        assertEquals(new Complex(2,0),new Complex(1,0).scale(2));
     }
 }
