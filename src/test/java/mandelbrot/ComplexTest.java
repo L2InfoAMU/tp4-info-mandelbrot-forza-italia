@@ -163,4 +163,11 @@ public class ComplexTest {
         assertEquals(new Complex(0,2),new Complex(0,1).scale(2));
         assertEquals(new Complex(2,0),new Complex(1,0).scale(2));
     }
+
+    @Test
+    void testReal(){
+        assertEquals(new Complex(1,0),Complex.real(1));
+        assertEquals(new Complex(2,0),Complex.real(2));
+        assertEquals(new Complex(real,0),Complex.real(real));
+    }
 }
